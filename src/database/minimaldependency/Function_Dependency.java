@@ -25,23 +25,21 @@ public class Function_Dependency {
         left_s+=right.toString();
         return left_s;
     }
-    // 获得左边的属性组
+
     public Attribute_Group get_left_Attribute_Group(){
         return this.left;
     }
-    // 获得右边的属性组
+
     public Attribute_Group get_right_Attribute_Group(){
         return this.right;
     }
 
-    // 获得左边的属性集
     public Attribute_Set get_left_Attribute_Set(){
         Attribute_Set a=new Attribute_Set();
         a.attributes=this.left.clone().attributes;
         return a;
     }
 
-    // 获得右边的属性集
     public Attribute_Set get_right_Attribute_Set(){
         Attribute_Set a=new Attribute_Set();
         a.attributes=this.right.clone().attributes;
@@ -54,9 +52,8 @@ public class Function_Dependency {
         return a;
     }
 
-    // 对函数依赖的左半部进行分割
     public ArrayList<Function_Dependency> left_split(){
-        ArrayList<Function_Dependency> res=new ArrayList<Function_Dependency>();
+        ArrayList<Function_Dependency> res= new ArrayList<>();
         if (this.left.attributes.size()>1){
             for (int i=0;i<this.left.attributes.size();i++){
                 Attribute_Group c=new Attribute_Group();
@@ -68,9 +65,8 @@ public class Function_Dependency {
         return res;
     }
 
-    // 对函数依赖的右半部进行分割
     public ArrayList<Function_Dependency> right_split(){
-        ArrayList<Function_Dependency> res=new ArrayList<Function_Dependency>();
+        ArrayList<Function_Dependency> res= new ArrayList<>();
         if (this.right.attributes.size()>1){
             for (int i=0;i<this.right.attributes.size();i++){
                 Attribute_Group c=new Attribute_Group();

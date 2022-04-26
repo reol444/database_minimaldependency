@@ -11,15 +11,15 @@ public class Attribute {
     }
 
     public String getName(){
-        return name;
+        return this.name;
     }
     @Override
     public String toString(){
-        return name;
+        return this.name;
     }
     @Override
     public int hashCode(){
-        return Objects.hash(name);
+        return Objects.hash(this.name);
     }
 
     @Override
@@ -27,18 +27,18 @@ public class Attribute {
         if (this == o) return true;
         if (!(o instanceof Attribute)) return false;
         Attribute a = (Attribute) o;
-        return a.getName().equals(name);
+        return a.getName().equals(this.name);
     }
 
     public boolean less_than(Attribute other){
-        if(name.compareTo(other.getName())<0){
+        if(this.name.compareTo(other.getName())<0){
             return true;
         }
         return false;
     }
 
     public boolean great_than(Attribute other){
-        if(name.compareTo(other.getName())>0){
+        if(this.name.compareTo(other.getName())>0){
             return true;
         }
         return false;
@@ -46,7 +46,7 @@ public class Attribute {
 
     @Override
     public Attribute clone(){
-        return new Attribute(name);
+        return new Attribute(this.name);
     }
 }
 
